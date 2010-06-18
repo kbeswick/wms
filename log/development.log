@@ -30,3 +30,17 @@ Migrating to CreateItems (20100618165835)
   [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618165835')[0m
   [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 142.51.8.234 at 2010-06-18 21:47:53) [GET]
+Rendering home/index
+Completed in 111ms (View: 110, DB: 0) | 200 OK [http://kevinbeswick.com/home/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 142.51.8.234 at 2010-06-18 21:49:34) [GET]
+Rendering home/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://kevinbeswick.com/]
