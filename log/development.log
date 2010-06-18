@@ -1,0 +1,32 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (287.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100618155954)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "login" character varying(40), "name" character varying(100) DEFAULT E'', "email" character varying(100), "crypted_password" character varying(40), "salt" character varying(40), "created_at" timestamp, "updated_at" timestamp, "remember_token" character varying(40), "remember_token_expires_at" timestamp) [0m
+  [4;35;1mSQL (99.5ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618155954')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateAddresses (20100618164000)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (123.4ms)[0m   [0mCREATE TABLE "addresses" ("id" serial primary key, "title" character varying(255), "street" character varying(255), "street_two" character varying(255), "city" character varying(255), "province" character varying(255), "country" character varying(255), "postal_code" character varying(255), "phone_number" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618164000')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Migrating to CreateStores (20100618164001)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (186.8ms)[0m   [0mCREATE TABLE "stores" ("id" serial primary key, "name" character varying(255), "website" character varying(255), "address_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618164001')[0m
+  [4;35;1mSQL (1718.8ms)[0m   [0mCOMMIT[0m
+Migrating to CreateRegistries (20100618165829)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCREATE TABLE "registries" ("id" serial primary key, "name" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618165829')[0m
+  [4;35;1mSQL (290.5ms)[0m   [0mCOMMIT[0m
+Migrating to CreateItems (20100618165835)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (258.8ms)[0m   [0mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "registry_id" integer, "price" decimal, "store_id" integer, "sku" character varying(255), "quantity" integer, "website" character varying(255), "picture" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100618165835')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
