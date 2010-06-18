@@ -25,7 +25,11 @@ class RegistriesController < ApplicationController
 
   def create
     @registry = Registry.new(params[:registry])
-
+    
+    if (current_user)
+      @registry.user_id = current_user.id
+    end
+    
     respond_to do |format|
       if @registry.save
         flash[:notice] = 'Registry was successfully created.'
