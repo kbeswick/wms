@@ -49,4 +49,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   map.root :controller => "home"
+  
+  map.resources :registries, :has_many => :items
+  map.resources :items, :has_one => :store
+  map.resources :stores, :has_one => :address
 end
