@@ -1,2 +1,32 @@
-<h1>Registries#show</h1>
-<p>Find me in app/views/registries/show.html.erb</p>
+<p>
+  <b>Name:</b>
+  <%=h @registry.name %>
+</p>
+
+<div>
+  <table>
+    <% @registry.items.each do |i| %>
+      <tr>
+        <table>
+          <tr>
+            <td rowspan=3><img src="<%=h i.picture %>" width="100px" height="100px"></td>
+            <td colspan=3><%= link_to i.name, i.website %></td>
+          </tr>
+          <tr>
+            <td>Price: $<%=h i.price %> ea.</td>
+            <td>SKU: <%=h i.sku %></td>
+            <td>Qty: <%=h i.quantity %></td>
+          </tr>
+          <tr>
+            <td colspan=2><b>Located At: <%=h i.store %></b></td>
+            <td>Buy</td>
+          </tr>
+        </table>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= link_to 'Add Item', new_registry_item_path(@registry) %> | 
+<%= link_to 'Edit', edit_registry_path(@registry) %> |
+<%= link_to 'Back', registries_path %>

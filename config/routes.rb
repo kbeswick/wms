@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :registries, :has_many => :items
+  map.resources :stores, :has_one => :address
+
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
@@ -50,7 +54,4 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
   map.root :controller => "home"
   
-  map.resources :registries, :has_many => :items
-  map.resources :items, :has_one => :store
-  map.resources :stores, :has_one => :address
 end

@@ -1,2 +1,15 @@
-<h1>Registries#new</h1>
-<p>Find me in app/views/registries/new.html.erb</p>
+<h1>New registry</h1>
+
+<% form_for(@registry) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', registries_path %>

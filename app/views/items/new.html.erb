@@ -1,2 +1,39 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h1>New Item</h1>
+
+<% form_for ([@registry, @item]) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :store %>
+    <%= f.text_field :store %>
+  </p>
+  <p>
+    <%= f.label :sku %>
+    <%= f.text_field :sku %>
+  </p>
+  <p>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%=  link_to 'Back', registry_items_path(@registry) %>
