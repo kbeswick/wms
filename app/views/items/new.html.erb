@@ -13,7 +13,8 @@
   </p>
   <p>
     <%= f.label :store %>
-    <%= f.text_field :store %>
+      <% stores = Store.find(:all, :order => :name) %>
+      <%= f.collection_select :store_id, stores, :id, :name %>
   </p>
   <p>
     <%= f.label :sku %>

@@ -1349,3 +1349,1216 @@ ActiveRecord::AssociationTypeMismatch (Store(#97519730) expected, got String(#84
 Rendered rescues/_trace (50.7ms)
 Rendered rescues/_request_and_response (1.2ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 142.51.8.234 at 2010-06-25 21:36:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1021ms (View: 1020, DB: 0) | 200 OK [http://kevinbeswick.com/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 21:36:42) [GET]
+  [4;36;1mRegistry Load (1.8ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/registries
+Rendering registries/index
+Completed in 372ms (View: 119, DB: 2) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 21:36:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #21 of app/views/registries/show.html.erb:
+18:             <td>Qty: <%=h i.quantity %></td>
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At: <%= link_to i.store.name, i.store.website %></b></td>
+22:             <td>Buy</td>
+23:           </tr>
+24:         </table>
+
+    app/views/registries/show.html.erb:21:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (65.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 21:41:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.8ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `stores' for #<Registry:0x95b11fc>) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At: 
+22:             <% @registry.stores.each do |s| %>
+23:               <%= link_to s.name, s.website %>
+24:             <% end %></b></td>
+25:             <td>Buy</td>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (67.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 21:43:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.7ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `stores' for #<Item:0xaff8218>) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At: 
+22:             <% i.stores.each do |s| %>
+23:               <%= link_to s.name, s.website %>
+24:             <% end %></b></td>
+25:             <td>Buy</td>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (72.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 21:50:26) [GET]
+  [4;36;1mRegistry Load (1.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/registries
+Rendering registries/index
+Completed in 121ms (View: 104, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 21:50:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At: 
+22:               <%= link_to i.store.name, i.store.website %>
+23:             </b></td>
+24:             <td>Buy</td>
+25:           </tr>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (111.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 21:58:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At: 
+22:               <%= link_to @store.name, @store.website %>
+23:             </b></td>
+24:             <td>Buy</td>
+25:           </tr>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (76.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:01:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At:
+22:               <%= link_to @store.name, @store.website %>
+23:             </b></td>
+24:             <td>Buy</td>
+25:           </tr>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (100.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:01:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (4.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #22 of app/views/registries/show.html.erb:
+19:           </tr>
+20:           <tr>
+21:             <td colspan=2><b>Located At:
+22:               <%= link_to @store.name, @store.website %>
+23:             </b></td>
+24:             <td>Buy</td>
+25:           </tr>
+
+    app/views/registries/show.html.erb:22:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:8
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (86.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:11:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 137ms (View: 109, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:11:48) [GET]
+  [4;35;1mRegistry Load (1.3ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/registries
+Rendering registries/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:11:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:22:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 96ms (View: 73, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 22:22:12) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+ERROR: compiling _run_erb_app47views47items47new46html46erb RAISED /home/kbeswick/git-repos/wms/app/views/items/new.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _run_erb_app47views47items47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New Item</h1>\n\n"
+
+;  form_for ([@registry, @item]) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  \n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :name ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :name ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :price ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :price ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :store ).to_s); @output_buffer.concat "\n      "
+;  stores = Store.find(:all, :order => :name) ; @output_buffer.concat "\n      "
+; @output_buffer.concat(( f.collection_select :store_id, stores, :id, :name ).to_s); @output_buffer.concat "\n  </p>\n  "
+
+;  end ; @output_buffer.concat "\n  <p>\n    "
+
+; @output_buffer.concat(( f.label :sku ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :sku ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :quantity ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :quantity ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :website ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :website ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :picture ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.text_field :picture ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit "Create" ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat((  link_to 'Back', registry_items_path(@registry) ).to_s); @output_buffer.concat "\n"
+; @output_buffer.force_encoding(__ENCODING__)
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `block in render_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action_with_flash'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:8:in `synchronize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+ActionView::TemplateError (/home/kbeswick/git-repos/wms/app/views/items/new.html.erb:43: syntax error, unexpected keyword_ensure, expecting $end) on line #43 of app/views/items/new.html.erb:
+40: 
+41: <%=  link_to 'Back', registry_items_path(@registry) %>
+
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (80.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 22:22:41) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 108ms (View: 30, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:24:08) [GET]
+  [4;36;1mRegistry Load (1.3ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/registries
+Rendering registries/index
+Completed in 30ms (View: 25, DB: 1) | 200 OK [http://kevinbeswick.com/registries/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 142.51.8.234 at 2010-06-25 22:24:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 34ms (View: 32, DB: 0) | 200 OK [http://kevinbeswick.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:24:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.5ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 69ms (View: 60, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 22:24:25) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#create (for 142.51.8.234 at 2010-06-25 22:25:31) [POST]
+  Parameters: {"authenticity_token"=>"HBkSP0Ql4hxdKPK4KbvbXK1F0kHFJLY9atHLn8nHjNw=", "item"=>{"name"=>"Test", "price"=>"49.99", "store_id"=>"3", "sku"=>"j14hj3h4j23kl4", "quantity"=>"2", "website"=>"http://www.something.com", "picture"=>"http://www.ctemploymentlawblog.com/test.jpg"}, "commit"=>"Create", "registry_id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+  [4;35;1mSQL (889.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "items" ("name", "registry_id", "price", "store_id", "sku", "quantity", "website", "picture", "created_at", "updated_at") VALUES(E'Test', 1, 49.99, 3, E'j14hj3h4j23kl4', 2, E'http://www.something.com', E'http://www.ctemploymentlawblog.com/test.jpg', '2010-06-25 18:25:32.103732', '2010-06-25 18:25:32.103732') RETURNING "id"[0m
+  [4;35;1mSQL (81.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/1/items/2
+Completed in 2190ms (DB: 972) | 302 Found [http://kevinbeswick.com/registries/1/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 142.51.8.234 at 2010-06-25 22:25:33) [GET]
+  Parameters: {"registry_id"=>"1", "id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 2 AND ("items".registry_id = 1)) [0m
+Rendering template within layouts/application
+Rendering items/show
+Completed in 369ms (View: 358, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/items/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:25:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#edit (for 142.51.8.234 at 2010-06-25 22:27:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/edit
+Completed in 39ms (View: 30, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#edit (for 142.51.8.234 at 2010-06-25 22:27:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/registries
+Rendering registries/edit
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:36:36) [GET]
+  [4;36;1mRegistry Load (1.3ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/registries
+Rendering registries/index
+Completed in 90ms (View: 70, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing HomeController#index (for 142.51.8.234 at 2010-06-25 22:36:39) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 14, DB: 0) | 200 OK [http://kevinbeswick.com/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:37:28) [GET]
+  [4;36;1mRegistry Load (1.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 79ms (View: 61, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:37:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 39ms (View: 30, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:37:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 22ms (View: 13, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:41) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:41) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:41) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:37:44) [GET]
+  [4;35;1mRegistry Load (1.3ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:37:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 25ms (View: 14, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:46) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:46) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:46) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 22:37:48) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 60ms (View: 49, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:48) [GET]
+
+ActionController::RoutingError (No route matches "/registries/1/items/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:48) [GET]
+
+ActionController::RoutingError (No route matches "/registries/1/items/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:37:48) [GET]
+
+ActionController::RoutingError (No route matches "/registries/1/items/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:39:30) [GET]
+  [4;36;1mRegistry Load (1.6ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 85ms (View: 66, DB: 2) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:39:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.6ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 39ms (View: 28, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:33) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:33) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:33) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:39:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 23ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:39:35) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:39:54) [GET]
+  [4;35;1mRegistry Load (1.1ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:48:14) [GET]
+  [4;36;1mRegistry Load (1.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 75ms (View: 58, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:14) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:14) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:14) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:48:15) [GET]
+  [4;35;1mRegistry Load (1.1ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 41ms (View: 35, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:15) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:15) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:48:15) [GET]
+
+ActionController::RoutingError (No route matches "/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:49:20) [GET]
+  [4;36;1mRegistry Load (1.8ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 93ms (View: 69, DB: 2) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#new (for 142.51.8.234 at 2010-06-25 22:49:22) [GET]
+Rendering template within layouts/application
+Rendering registries/new
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://kevinbeswick.com/registries/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:23) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:23) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:23) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:49:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.7ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 36ms (View: 25, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:27) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:27) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:27) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:49:47) [GET]
+  [4;35;1mRegistry Load (1.4ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 15ms (View: 8, DB: 2) | 200 OK [http://kevinbeswick.com/registries/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:47) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:47) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 142.51.8.234 at 2010-06-25 22:49:47) [GET]
+
+ActionController::RoutingError (No route matches "/registries/stylesheets/blueprint/ie.css" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:50:56) [GET]
+  [4;36;1mRegistry Load (1.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 79ms (View: 61, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:50:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 34ms (View: 25, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 22:51:10) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (1.1ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 34ms (View: 21, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#new (for 142.51.8.234 at 2010-06-25 22:51:19) [GET]
+Rendering template within layouts/application
+Rendering registries/new
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://kevinbeswick.com/registries/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#create (for 142.51.8.234 at 2010-06-25 22:51:23) [POST]
+  Parameters: {"authenticity_token"=>"HBkSP0Ql4hxdKPK4KbvbXK1F0kHFJLY9atHLn8nHjNw=", "registry"=>{"name"=>"Reg123"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "registries" ("name", "user_id", "created_at", "updated_at") VALUES(E'Reg123', NULL, '2010-06-25 18:51:23.706740', '2010-06-25 18:51:23.706740') RETURNING "id"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/4
+Completed in 15ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 22:51:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 4) [0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://kevinbeswick.com/registries/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:51:27) [GET]
+  [4;36;1mRegistry Load (1.2ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]

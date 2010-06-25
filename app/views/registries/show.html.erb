@@ -18,7 +18,10 @@
             <td>Qty: <%=h i.quantity %></td>
           </tr>
           <tr>
-            <td colspan=2><b>Located At: <%=h i.store %></b></td>
+            <td colspan=2><b>Located At:
+              <% @store = i.store %>
+              <%= link_to @store.name, @store.website %>
+            </b></td>
             <td>Buy</td>
           </tr>
         </table>
