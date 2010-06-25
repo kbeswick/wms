@@ -2562,3 +2562,68 @@ Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 22:51:27) 
 Rendering template within layouts/application
 Rendering registries/index
 Completed in 13ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 23:33:04) [GET]
+  [4;36;1mRegistry Load (7.2ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 317ms (View: 259, DB: 7) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 23:33:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;35;1mStore Load (0.7ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 406ms (View: 395, DB: 3) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 23:34:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 127ms (View: 94, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#edit (for 142.51.8.234 at 2010-06-25 23:38:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/edit
+Completed in 1915ms (View: 1907, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-25 23:38:51) [GET]
+  Parameters: {"registry_id"=>"1"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (1.0ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 88ms (View: 76, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 23:39:08) [GET]
+  [4;35;1mRegistry Load (1.0ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://kevinbeswick.com/registries/]
