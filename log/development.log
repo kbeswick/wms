@@ -2627,3 +2627,290 @@ Processing RegistriesController#index (for 142.51.8.234 at 2010-06-25 23:39:08) 
 Rendering template within layouts/application
 Rendering registries/index
 Completed in 19ms (View: 14, DB: 1) | 200 OK [http://kevinbeswick.com/registries/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-25 23:41:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 1) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 108ms (View: 83, DB: 2) | 200 OK [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 208.96.73.148 at 2010-06-26 04:38:41) [GET]
+  [4;36;1mRegistry Load (49.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 282ms (View: 156, DB: 49) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#new (for 208.96.73.148 at 2010-06-26 04:38:48) [GET]
+Rendering template within layouts/application
+Rendering registries/new
+Completed in 116ms (View: 107, DB: 0) | 200 OK [http://kevinbeswick.com/registries/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#new (for 208.96.73.148 at 2010-06-26 04:38:54) [GET]
+Rendering template within layouts/application
+Rendering registries/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://kevinbeswick.com/registries/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#create (for 208.96.73.148 at 2010-06-26 04:39:00) [POST]
+  Parameters: {"authenticity_token"=>"42wqF1owXT4nmqvB1qVj/Eubb81wZrklNg45Eynvk7Y=", "registry"=>{"name"=>"Faggot registry"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "registries" ("name", "user_id", "created_at", "updated_at") VALUES(E'Faggot registry', NULL, '2010-06-26 00:39:00.312362', '2010-06-26 00:39:00.312362') RETURNING "id"[0m
+  [4;35;1mSQL (47.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/5
+Completed in 1066ms (DB: 48) | 302 Found [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-26 04:39:01) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 5) [0m
+Completed in 93ms (View: 80, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 208.96.73.148 at 2010-06-26 04:39:06) [GET]
+  Parameters: {"registry_id"=>"5"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 56ms (View: 44, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#create (for 208.96.73.148 at 2010-06-26 04:39:45) [POST]
+  Parameters: {"authenticity_token"=>"42wqF1owXT4nmqvB1qVj/Eubb81wZrklNg45Eynvk7Y=", "item"=>{"name"=>"Pot", "price"=>"59.99", "store_id"=>"2", "sku"=>"r2j4k23j4k32j4", "quantity"=>"3", "website"=>"http://www.canadiantire.ca/", "picture"=>"http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg"}, "commit"=>"Create", "registry_id"=>"5"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "items" ("name", "registry_id", "price", "store_id", "sku", "quantity", "website", "picture", "created_at", "updated_at") VALUES(E'Pot', 5, 59.99, 2, E'r2j4k23j4k32j4', 3, E'http://www.canadiantire.ca/', E'http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg', '2010-06-26 00:39:46.001034', '2010-06-26 00:39:46.001034') RETURNING "id"[0m
+  [4;35;1mSQL (227.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/5/items/3
+Completed in 246ms (DB: 229) | 302 Found [http://kevinbeswick.com/registries/5/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:39:46) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"3"}
+  [4;36;1mRegistry Load (0.9ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 3 AND ("items".registry_id = 5)) [0m
+Rendering template within layouts/application
+Rendering items/show
+Completed in 143ms (View: 102, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5/items/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-26 04:39:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 5) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://kevinbeswick.com/registries/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-26 04:40:24) [GET]
+  Parameters: {"registry_id"=>"5"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/index
+Completed in 55ms (View: 46, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:30) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"5"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5 AND ("items".registry_id = 5)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=5 AND ("items".registry_id = 5)):
+  app/controllers/items_controller.rb:9:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (71.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:33) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"6"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6 AND ("items".registry_id = 5)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=6 AND ("items".registry_id = 5)):
+  app/controllers/items_controller.rb:9:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (54.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:34) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"7"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 7 AND ("items".registry_id = 5)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=7 AND ("items".registry_id = 5)):
+  app/controllers/items_controller.rb:9:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (86.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:37) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"8"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 8 AND ("items".registry_id = 5)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=8 AND ("items".registry_id = 5)):
+  app/controllers/items_controller.rb:9:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (56.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:39) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"4"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4 AND ("items".registry_id = 5)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=4 AND ("items".registry_id = 5)):
+  app/controllers/items_controller.rb:9:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (98.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#show (for 208.96.73.148 at 2010-06-26 04:40:41) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"3"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 3 AND ("items".registry_id = 5)) [0m
+Rendering template within layouts/application
+Rendering items/show
+Completed in 12ms (View: 1, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5/items/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 208.96.73.148 at 2010-06-26 04:40:46) [GET]
+  Parameters: {"registry_id"=>"5", "id"=>"3"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 3 AND ("items".registry_id = 5)) [0m
+Rendering template within layouts/application
+Rendering items/edit
+Completed in 49ms (View: 38, DB: 1) | 200 OK [http://kevinbeswick.com/registries/5/items/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 208.96.73.148 at 2010-06-26 04:41:21) [GET]
+  [4;36;1mRegistry Load (1.1ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#edit (for 208.96.73.148 at 2010-06-26 04:41:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering registries/edit
+Completed in 127ms (View: 120, DB: 1) | 200 OK [http://kevinbeswick.com/registries/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#destroy (for 208.96.73.148 at 2010-06-26 04:41:29) [DELETE]
+  Parameters: {"authenticity_token"=>"42wqF1owXT4nmqvB1qVj/Eubb81wZrklNg45Eynvk7Y=", "id"=>"1"}
+  [4;36;1mRegistry Load (0.7ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegistry Destroy (0.2ms)[0m   [0;1mDELETE FROM "registries" WHERE "id" = 1[0m
+  [4;35;1mSQL (59.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries
+Completed in 105ms (DB: 60) | 302 Found [http://kevinbeswick.com/registries/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 208.96.73.148 at 2010-06-26 04:41:29) [GET]
+  [4;36;1mRegistry Load (1.0ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (29.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100618155954)
+Migrating to CreateAddresses (20100618164000)
+Migrating to CreateStores (20100618164001)
+Migrating to CreateRegistries (20100618165829)
+Migrating to CreateItems (20100618165835)
+Migrating to AddQtyBoughtToItems (20100626192133)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (54.9ms)[0m   [0;1mALTER TABLE "items" ADD COLUMN "qtybought" integer[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100626192133')[0m
+  [4;36;1mSQL (24.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
