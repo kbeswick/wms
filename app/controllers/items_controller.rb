@@ -10,19 +10,19 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @registry = Registry.find(params[:registry_id])
-    @item = @registry.items.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update_buy
-    @registry = Registry.find(params[:registry_id])
     @item = Item.find(params[:id])
-    if params[:quantity] > @item.quantity - @item.qtybought
+    @registry = Registry.find(@item.registry_id)
+    if params[:quantity].to_i > @item.quantity - @item.qtybought
       flash[:error] = 'Can\'t buy more than quantity left.'
       render :action => "buy"
     else
-      @item.qtybought = @item.qtybought + params[:quantity]
+      @item.qtybought = @item.qtybought + params[:quantity].to_i
       @item.save
+      flash[:notice] = "Sucessfully bought this item."
       redirect_to(@registry)
     end
   end

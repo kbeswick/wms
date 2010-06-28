@@ -1,5 +1,9 @@
 <h2>Viewing Registry: <%=h @registry.name %></h2>
 
+<% if flash[:notice] %>
+<div class="success"><%= flash[:notice] %></div>
+<% end %>
+
 <div>
   <table>
     <% @registry.items.each do |i| %>
@@ -12,14 +16,14 @@
           <tr>
             <td>Price: $<%=h i.price %> ea.</td>
             <td>SKU: <%=h i.sku %></td>
-            <td>Qty: <%=h i.quantity %></td>
+            <td>Qty: <%=h i.quantity - i.qtybought %></td>
           </tr>
           <tr>
             <td colspan=2><b>Located At:
               <% @store = i.store %>
               <%= link_to @store.name, @store.website %>
             </b></td>
-            <td>Buy</td>
+            <td><%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %></td>
           </tr>
         </table>
       </tr>
