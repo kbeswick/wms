@@ -3,17 +3,20 @@
     <title>WMS: <%= controller.action_name %></title>
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
     <!–[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]–>
   </head>
   <body>
-    <div class="container">
-    <div id="header" class="span-24 last">
-
-      <h1>Wedding Management System</h1>
-    </div> 
-    <div id="subheader" class="span-24 last">
+    <div id="title_header">
+      <div class="container">
+        <div id="wms_logo" class="span-16"></div>
+        <div id="first_menu" class="span-8 last"><h3>Home &nbsp;&nbsp; Something &nbsp;&nbsp; Login</h3></div>
+      </div>
     </div>
-    
+    <div id="second_header">
+      <div id="second_menu" class="container"></div>
+    </div>
+    <div id="main" class="container">
       <%= yield %>
     </div>
   </body>

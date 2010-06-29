@@ -1,0 +1,28 @@
+body {
+  background-color: #E0E0E0;
+}
+
+#title_header {
+  background-image: url('gradient1.jpg');  
+  background-repeat:repeat-x;
+  height: 55px;
+}
+#wms_logo {
+  background-image: url('wmslogo.png');
+  height: 55px;
+  width: 99px;
+}
+#second_header {
+  background-color: #1fadff;
+  height: 100px;
+}
+#second_menu {
+  height: 100px;
+}
+#first_menu {
+  float: right;
+  padding-top: 18px;
+}
+#first_menu h3 {
+  color: #E0E0E0;
+}

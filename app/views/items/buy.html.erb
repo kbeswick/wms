@@ -1,0 +1,19 @@
+<h1>Buying <%=h @item.name %>:</h1>
+
+<% form_tag({:controller => "items", :action=> "update_buy"}) do %>
+  
+  <% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+  <% end %>
+
+  <p>
+    <%= label_tag(:quantity, "Quantity to buy:") %><br />
+    <%= text_field_tag(:quantity) %>
+  </p>
+  <%= hidden_field_tag('id', @item.id) %>
+  <p>
+    <%= submit_tag("Buy") %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', registry_path(@item.registry_id) %>
