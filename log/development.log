@@ -5252,3 +5252,1597 @@ Rendering registries/show
   [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
   [4;36;1mStore Load (0.7ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
 Completed in 97ms (View: 75, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 18:08:14) [GET]
+  [4;36;1mRegistry Load (36.3ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 523ms (View: 318, DB: 36) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:08:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 116ms (View: 106, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 18:08:47) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/edit
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/items/edit/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 18:08:49) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 33ms (View: 26, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 18:08:52) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"1", "id"=>"4", "commit"=>"Buy"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.4ms)[0m   [0mUPDATE "items" SET "qtybought" = 1, "updated_at" = '2010-06-30 14:08:52.730707' WHERE "id" = 4[0m
+  [4;36;1mSQL (32.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 72ms (DB: 34) | 302 Found [http://kevinbeswick.com/items/update_buy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:08:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.9ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 18:09:00) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 45ms (View: 37, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 18:09:02) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"3", "id"=>"4", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 18:09:04) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"2", "id"=>"4", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:09:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#edit (for 142.51.8.234 at 2010-06-30 18:13:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/edit
+Completed in 394ms (View: 386, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 18:14:00) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (1.0ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 59ms (View: 46, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 18:14:08) [GET]
+  [4;35;1mRegistry Load (1.0ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#new (for 142.51.8.234 at 2010-06-30 18:14:29) [GET]
+Rendering template within layouts/application
+Rendering registries/new
+Completed in 396ms (View: 389, DB: 0) | 200 OK [http://kevinbeswick.com/registries/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:14:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:40:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 91ms (View: 68, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 18:40:22) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/edit
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0x9286718>) on line #3 of app/views/items/edit.html.erb:
+1: <h1>Editing Item</h1>
+2: 
+3: <% form_for (@item) do |f| %>
+4:   <%= f.error_messages %>
+5:   
+6:   <p>
+
+    app/views/items/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (60.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:41:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 107ms (View: 86, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 18:41:30) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/edit
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0x8f90e28>) on line #3 of app/views/items/edit.html.erb:
+1: <h1>Editing Item</h1>
+2: 
+3: <% form_for (@item) do |f| %>
+4:   <%= f.error_messages %>
+5:   
+6:   <p>
+
+    app/views/items/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (58.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:41:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 96ms (View: 74, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 18:41:58) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/edit
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0x9c0f1e8>) on line #3 of app/views/items/edit.html.erb:
+1: <h1>Editing Item</h1>
+2: 
+3: <% form_for (@item) do |f| %>
+4:   <%= f.error_messages %>
+5:   
+6:   <p>
+
+    app/views/items/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (65.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 18:43:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 104ms (View: 81, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 18:43:58) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering items/edit
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0x8e3ed58>) on line #3 of app/views/items/edit.html.erb:
+1: <h1>Editing Item</h1>
+2: 
+3: <% form_for(@item) do |f| %>
+4:   <%= f.error_messages %>
+5:   
+6:   <p>
+
+    app/views/items/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (62.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 19:21:36) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;36;1mStore Load (0.9ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 128ms (View: 41, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 19:22:25) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;36;1mStore Load (0.8ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 165ms (View: 61, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 19:22:30) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Pan", "price"=>"49.99", "store_id"=>"3", "sku"=>"k4j2k34j23kjd", "quantity"=>"2", "website"=>"http://www.canadiantire.ca/", "picture"=>"http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"4"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (147.1ms)[0m   [0;1mUPDATE "items" SET "sku" = E'k4j2k34j23kjd', "updated_at" = '2010-06-30 15:22:30.168121' WHERE "id" = 4[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 173ms (DB: 149) | 302 Found [http://kevinbeswick.com/registries/2/items/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:22:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (1.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 34ms (View: 25, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:23:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 59ms (View: 49, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 19:23:14) [GET]
+  [4;36;1mRegistry Load (1.1ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/registries/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:23:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 3) [0m
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://kevinbeswick.com/registries/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:23:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 4) [0m
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://kevinbeswick.com/registries/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:23:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 4) [0m
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://kevinbeswick.com/registries/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 19:23:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 48ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 20:03:53) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#create (for 142.51.8.234 at 2010-06-30 20:04:36) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Pot", "price"=>"39.95", "store_id"=>"1", "sku"=>"sdklf3k4jk1jj", "quantity"=>"4", "website"=>"http://zenstoves.net/", "picture"=>"http://zenstoves.net/CanPots/GreasePot.jpg"}, "commit"=>"Create", "registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "items" ("name", "registry_id", "price", "store_id", "sku", "quantity", "website", "picture", "created_at", "updated_at", "qtybought") VALUES(E'Pot', 2, 39.95, 1, E'sdklf3k4jk1jj', 4, E'http://zenstoves.net/', E'http://zenstoves.net/CanPots/GreasePot.jpg', '2010-06-30 16:04:36.884149', '2010-06-30 16:04:36.884149', 0) RETURNING "id"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 1334ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 20:04:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.8ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.8ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 28ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 20:18:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 110ms (View: 88, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 20:18:42) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"4"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 4) [0m
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;36;1mStore Load (0.9ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 33ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 20:18:47) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (0.9ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 56ms (View: 20, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoresController#new (for 142.51.8.234 at 2010-06-30 20:18:48) [GET]
+Rendering template within layouts/application
+Rendering stores/new
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://kevinbeswick.com/stores/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoresController#create (for 142.51.8.234 at 2010-06-30 20:19:04) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "store"=>{"name"=>"Sears", "website"=>"http://www.sears.ca"}, "commit"=>"Create"}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (127.1ms)[0m   [0;1mINSERT INTO "stores" ("name", "website", "address_id", "created_at", "updated_at") VALUES(E'Sears', E'http://www.sears.ca', NULL, '2010-06-30 16:19:04.092870', '2010-06-30 16:19:04.092870') RETURNING "id"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries
+Completed in 141ms (DB: 128) | 302 Found [http://kevinbeswick.com/stores]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 20:19:04) [GET]
+  [4;36;1mRegistry Load (1.4ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 20:19:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 31ms (View: 20, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 20:19:12) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (0.8ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 21:23:20) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 97ms (View: 36, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoresController#new (for 142.51.8.234 at 2010-06-30 21:23:22) [GET]
+Rendering template within layouts/application
+Rendering stores/new
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://kevinbeswick.com/stores/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoresController#create (for 142.51.8.234 at 2010-06-30 21:23:37) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "store"=>{"name"=>"Future Shop", "website"=>"http://www.futureshop.ca"}, "commit"=>"Create"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "stores" ("name", "website", "address_id", "created_at", "updated_at") VALUES(E'Future Shop', E'http://www.futureshop.ca', NULL, '2010-06-30 17:23:37.481950', '2010-06-30 17:23:37.481950') RETURNING "id"[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2/items/new
+Completed in 17ms (DB: 3) | 302 Found [http://kevinbeswick.com/stores]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 21:23:37) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (0.9ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 25ms (View: 9, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 142.51.8.234 at 2010-06-30 21:24:00) [GET]
+  Parameters: {"registry_id"=>"2"}
+Rendering template within layouts/application
+Rendering items/index
+Completed in 34ms (View: 32, DB: 0) | 200 OK [http://kevinbeswick.com/registries/2/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 21:24:30) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (1.6ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 147ms (View: 32, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:24:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 33ms (View: 25, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:38:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 97ms (View: 75, DB: 3) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 21:38:42) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 31ms (View: 19, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#create (for 142.51.8.234 at 2010-06-30 21:39:31) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.99", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://www.givinggiftsthatgive.com/images/Baskets/OvenMitt.JPG", "picture"=>"http://www.givinggiftsthatgive.com/"}, "commit"=>"Create", "registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO "items" ("name", "registry_id", "price", "store_id", "sku", "quantity", "website", "picture", "created_at", "updated_at", "qtybought") VALUES(E'Glove', 2, 43.99, 2, E'asfswr234234fsd', 2, E'http://www.givinggiftsthatgive.com/images/Baskets/OvenMitt.JPG', E'http://www.givinggiftsthatgive.com/', '2010-06-30 17:39:31.466957', '2010-06-30 17:39:31.466957', 0) RETURNING "id"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 22ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:39:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 24ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 21:39:45) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 27ms (View: 14, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 21:40:37) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.99", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.4ms)[0m   [0mUPDATE "items" SET "website" = E'http://store.lighthouse-sf.org', "picture" = E'http://store.lighthouse-sf.org/images/KI930.jpg', "updated_at" = '2010-06-30 17:40:37.638630' WHERE "id" = 6[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 17ms (DB: 3) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:40:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:41:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 97ms (View: 72, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 21:44:02) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;36;1mStore Load (0.9ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 92ms (View: 26, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 21:44:07) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.97", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.4ms)[0m   [0;1mUPDATE "items" SET "price" = 43.97, "updated_at" = '2010-06-30 17:44:07.286187' WHERE "id" = 6[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 21ms (DB: 4) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:44:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.5ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 61ms (View: 51, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:45:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 105ms (View: 81, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 21:45:46) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 45ms (View: 38, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 21:45:48) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"3", "id"=>"6", "commit"=>"Buy"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:56:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 96ms (View: 75, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 21:56:20) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 36ms (View: 21, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 21:56:23) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.98", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.98, "updated_at" = '2010-06-30 17:56:23.965218' WHERE "id" = 6[0m
+  [4;36;1mSQL (1163.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 1179ms (DB: 1165) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:56:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 23ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:58:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 92ms (View: 71, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 21:58:25) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 21:58:29) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.97", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.4ms)[0m   [0mUPDATE "items" SET "price" = 43.97, "updated_at" = '2010-06-30 17:58:29.600567' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 16ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 21:58:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 25ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:08:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 131ms (View: 106, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:08:57) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 34ms (View: 18, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:09:09) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.98", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.98, "updated_at" = '2010-06-30 18:09:09.428993' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 15ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:09:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.5ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:17:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 100ms (View: 76, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:17:12) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:17:16) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.97", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.97, "updated_at" = '2010-06-30 18:17:16.295589' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 15ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:17:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:20:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 95ms (View: 74, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:20:53) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 33ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:20:57) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.95", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.95, "updated_at" = '2010-06-30 18:20:57.494250' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 15ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:20:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 23ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:22:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 91ms (View: 71, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:22:48) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:22:51) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.94", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.94, "updated_at" = '2010-06-30 18:22:51.759267' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 18ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:22:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:24:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 99ms (View: 77, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:24:52) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:24:55) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.97", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (1.1ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (1.1ms)[0m   [0mUPDATE "items" SET "price" = 43.97, "updated_at" = '2010-06-30 18:24:55.927652' WHERE "id" = 6[0m
+  [4;36;1mSQL (221.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 241ms (DB: 224) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:24:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 22:25:05) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 22:25:07) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"5", "id"=>"5", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 52ms (View: 2, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 22:27:29) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"55", "id"=>"5", "commit"=>"Buy"}
+  [4;36;1mItem Load (0.8ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 80ms (View: 16, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 22:27:58) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"44", "id"=>"5", "commit"=>"Buy"}
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 83ms (View: 17, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:28:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 36ms (View: 27, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 22:28:20) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:28:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 53ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 142.51.8.234 at 2010-06-30 22:28:36) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"6"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.9ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 29ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 142.51.8.234 at 2010-06-30 22:28:40) [PUT]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "item"=>{"name"=>"Glove", "price"=>"43.94", "store_id"=>"2", "sku"=>"asfswr234234fsd", "quantity"=>"2", "website"=>"http://store.lighthouse-sf.org", "picture"=>"http://store.lighthouse-sf.org/images/KI930.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"6"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 6) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.3ms)[0m   [0mUPDATE "items" SET "price" = 43.94, "updated_at" = '2010-06-30 18:28:40.503197' WHERE "id" = 6[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 15ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/2/items/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:28:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+Completed in 29ms (View: 19, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 22:29:57) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 44ms (View: 35, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 22:29:59) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"1", "id"=>"5", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.4ms)[0m   [0;1mUPDATE "items" SET "qtybought" = 1, "updated_at" = '2010-06-30 18:29:59.981868' WHERE "id" = 5[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 17ms (DB: 2) | 302 Found [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:30:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 22:30:35) [GET]
+  [4;35;1mRegistry Load (1.1ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#destroy (for 142.51.8.234 at 2010-06-30 22:30:38) [DELETE]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"3"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 3) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRegistry Destroy (0.2ms)[0m   [0;1mDELETE FROM "registries" WHERE "id" = 3[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries
+Completed in 9ms (DB: 1) | 302 Found [http://kevinbeswick.com/registries/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 22:30:39) [GET]
+  [4;36;1mRegistry Load (1.1ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 44ms (View: 7, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 22:32:26) [GET]
+  [4;36;1mRegistry Load (1.4ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 85ms (View: 67, DB: 2) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#destroy (for 142.51.8.234 at 2010-06-30 22:32:31) [DELETE]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 5) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRegistry Destroy (0.5ms)[0m   [0mDELETE FROM "registries" WHERE "id" = 5[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries
+Completed in 11ms (DB: 2) | 302 Found [http://kevinbeswick.com/registries/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 142.51.8.234 at 2010-06-30 22:32:31) [GET]
+  [4;35;1mRegistry Load (1.0ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:32:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 36ms (View: 28, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 142.51.8.234 at 2010-06-30 22:34:17) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;36;1mStore Load (1.0ms)[0m   [0;1mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 32ms (View: 20, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoresController#new (for 142.51.8.234 at 2010-06-30 22:34:19) [GET]
+Rendering template within layouts/application
+Rendering stores/new
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://kevinbeswick.com/stores/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:36:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 22:55:07) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 22:55:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.6ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.7ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 29ms (View: 18, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 209.91.134.79 at 2010-06-30 22:58:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 285ms (View: 277, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 209.91.134.79 at 2010-06-30 22:58:22) [POST]
+  Parameters: {"authenticity_token"=>"LvLgUE/2qykdt7BVZyUKRe9fUoU88DMcAH09Xho68zU=", "id"=>"5"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+  [4;35;1mStore Load (0.8ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 29ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/items/edit/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update (for 209.91.134.79 at 2010-06-30 22:58:46) [PUT]
+  Parameters: {"authenticity_token"=>"LvLgUE/2qykdt7BVZyUKRe9fUoU88DMcAH09Xho68zU=", "item"=>{"name"=>"Pot", "price"=>"39.95", "store_id"=>"1", "sku"=>"Kevin is Gay", "quantity"=>"4", "website"=>"http://zenstoves.net/", "picture"=>"http://zenstoves.net/CanPots/GreasePot.jpg"}, "commit"=>"Update", "registry_id"=>"2", "id"=>"5"}
+  [4;36;1mItem Load (1.0ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Update (0.4ms)[0m   [0mUPDATE "items" SET "sku" = E'Kevin is Gay', "updated_at" = '2010-06-30 18:58:46.335482' WHERE "id" = 5[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 21ms (DB: 5) | 302 Found [http://kevinbeswick.com/registries/2/items/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 209.91.134.79 at 2010-06-30 22:58:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 30ms (View: 19, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 23:04:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;36;1mStore Load (0.1ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 23:15:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.5ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;35;1mStore Load (0.1ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 142.51.8.234 at 2010-06-30 23:16:00) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "id"=>"5"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 23:16:03) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"44", "id"=>"5", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://kevinbeswick.com/items/update_buy]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#update_buy (for 142.51.8.234 at 2010-06-30 23:16:07) [POST]
+  Parameters: {"authenticity_token"=>"/tRhsbu6pxLM92ZePYVtdr4H6lC55urnUnvvJwPldUQ=", "quantity"=>"1", "id"=>"5", "commit"=>"Buy"}
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 5) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Update (0.3ms)[0m   [0;1mUPDATE "items" SET "qtybought" = 2, "updated_at" = '2010-06-30 19:16:07.974583' WHERE "id" = 5[0m
+  [4;35;1mSQL (954.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 970ms (DB: 956) | 302 Found [http://kevinbeswick.com/items/update_buy]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 142.51.8.234 at 2010-06-30 23:16:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 2) [0m
+  [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]

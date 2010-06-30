@@ -77,6 +77,7 @@ class RegistriesController < ApplicationController
     @registry = Registry.find(params[:id])
     @registry.destroy
 
+    flash[:notice] = "Registry deleted."
     respond_to do |format|
       format.html { redirect_to(registries_url) }
       format.xml  { head :ok }

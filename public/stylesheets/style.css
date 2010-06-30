@@ -26,3 +26,31 @@ body {
 #first_menu h3 {
   color: #E0E0E0;
 }
+
+#footer_error
+{
+  background-color: #CC0000;
+  height: 30px;
+  text-align: center;
+  font-size:14px;
+  color:#FBE3E4;
+  padding-top: 10px;
+  width: 100%;
+  position:fixed;
+  left: 0px;
+  bottom: 0px;
+}
+
+#footer_notice
+{
+  background-color: #00CC33;
+  height: 30px;
+  text-align: center;
+  font-size:14px;
+  color:#264409;
+  padding-top: 10px;
+  width: 100%;
+  position:fixed;
+  left: 0px;
+  bottom: 0px;
+}

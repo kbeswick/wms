@@ -15,6 +15,7 @@
     <%= f.label :store %>
       <% stores = Store.find(:all, :order => :name) %>
       <%= f.collection_select :store_id, stores, :id, :name %>
+      <%= link_to 'New Store', :controller => "stores", :action => "new" %>
   </p>
   <p>
     <%= f.label :sku %>
@@ -37,4 +38,4 @@
   </p>
 <% end %>
 
-<%=  link_to 'Back', registry_items_path(@registry) %>
+<%=  link_to 'Back', registry_path(@registry) %>

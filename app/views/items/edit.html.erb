@@ -1,2 +1,40 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h1>Editing Item</h1>
+
+<% form_for([@registry, @item]) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :store %>
+      <% stores = Store.find(:all, :order => :name) %>
+      <%= f.collection_select :store_id, stores, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :sku %>
+    <%= f.text_field :sku %>
+  </p>
+  <p>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%=  link_to 'Back', registry_path(@item.registry_id) %>

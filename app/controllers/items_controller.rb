@@ -43,12 +43,14 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @registry = Registry.find(@item.registry_id)
   end
 
   def update
     @item = Item.find(params[:id])
     @registry = Registry.find(@item.registry_id)
     if @item.update_attributes(params[:item])
+      flash[:notice] = "Item successfully updated."
       redirect_to registry_path(@registry)
     else
       render :action => "edit"

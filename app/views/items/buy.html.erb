@@ -2,10 +2,6 @@
 
 <% form_tag({:controller => "items", :action=> "update_buy"}) do %>
   
-  <% if flash[:error] %>
-    <div class="error"><%= flash[:error] %></div>
-  <% end %>
-
   <p>
     <%= label_tag(:quantity, "Quantity to buy:") %><br />
     <%= text_field_tag(:quantity) %>
