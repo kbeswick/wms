@@ -4421,3 +4421,834 @@ Rendering registries/show
   [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
   [4;36;1mStore Load (0.2ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
 Completed in 105ms (View: 32, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 208.96.73.148 at 2010-06-30 07:05:05) [GET]
+  [4;36;1mRegistry Load (40.5ms)[0m   [0;1mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 530ms (View: 351, DB: 41) | 200 OK [http://kevinbeswick.com/registries]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:05:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0xadd0da8>) on line #29 of app/views/registries/show.html.erb:
+26:             <td>
+27:               <%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %> 
+28:               <%= button_to 'Edit', edit_registry_item_path(@registry, i) %>
+29:               <%= button_to 'Delete', i, :confirm => 'Are you sure?', :method => :delete %>
+30:             </td>
+31:           </tr>
+32:         </table>
+
+    app/views/registries/show.html.erb:29:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (71.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:05:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.6ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `edit_item_path' for #<ActionView::Base:0x9db3300>) on line #28 of app/views/registries/show.html.erb:
+25:             </b></td>
+26:             <td>
+27:               <%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %> 
+28:               <%= button_to 'Edit', edit_item_path(i) %>
+29:               <%= button_to 'Delete', i, :confirm => 'Are you sure?', :method => :delete %>
+30:             </td>
+31:           </tr>
+
+    app/views/registries/show.html.erb:28:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (91.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:06:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `item_path' for #<ActionView::Base:0xae80684>) on line #29 of app/views/registries/show.html.erb:
+26:             <td>
+27:               <%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %> 
+28:               <%= button_to 'Edit', :controller => "items", :action => "edit", :id => i %>
+29:               <%= button_to 'Delete', i, :confirm => 'Are you sure?', :method => :delete %>
+30:             </td>
+31:           </tr>
+32:         </table>
+
+    app/views/registries/show.html.erb:29:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (106.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:07:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 112ms (View: 87, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 208.96.73.148 at 2010-06-30 07:08:04) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"1"}
+
+ActiveRecord::RecordNotFound (Couldn't find Registry without an ID):
+  app/controllers/items_controller.rb:46:in `edit'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:10:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 108ms (View: 86, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:10:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (4.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 35ms (View: 21, DB: 6) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:10:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 23ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 208.96.73.148 at 2010-06-30 07:10:24) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"1"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering items/edit
+Completed in 41ms (View: 32, DB: 1) | 200 OK [http://kevinbeswick.com/items/edit/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#delete (for 208.96.73.148 at 2010-06-30 07:10:28) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?"}
+
+ActionController::UnknownAction (No action responded to delete. Actions: buy, create, destroy, edit, index, new, show, update, and update_buy):
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:11:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 111ms (View: 79, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:11:44) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?", "method"=>"delete"}
+
+ActiveRecord::RecordNotFound (Couldn't find Registry without an ID):
+  app/controllers/items_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (47.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:11:48) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?", "method"=>"delete"}
+
+ActiveRecord::RecordNotFound (Couldn't find Registry without an ID):
+  app/controllers/items_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:13:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (6.2ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.5ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 126ms (View: 89, DB: 8) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:13:17) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?", "method"=>"delete"}
+
+ActiveRecord::RecordNotFound (Couldn't find Registry without an ID):
+  app/controllers/items_controller.rb:3:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (61.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:14:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.7ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 113ms (View: 78, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:14:14) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?", "method"=>"delete"}
+Rendering template within layouts/application
+Rendering items/index
+Completed in 33ms (View: 31, DB: 0) | 200 OK [http://kevinbeswick.com/items?confirm=Are+you+sure%3F&method=delete]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:14:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 53ms (View: 43, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:15:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.2ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 93ms (View: 71, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#destroy (for 208.96.73.148 at 2010-06-30 07:15:31) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?"}
+
+ActiveRecord::RecordNotFound (Couldn't find Item without an ID):
+  app/controllers/items_controller.rb:58:in `destroy'
+  <internal:prelude>:8:in `synchronize'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (62.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:16:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+ERROR: compiling _run_erb_app47views47registries47show46html46erb RAISED /home/kbeswick/git-repos/wms/app/views/registries/show.html.erb:29: syntax error, unexpected ')', expecting tASSOC
+...:confirm => 'Are you sure?' } ).to_s); @output_buffer.concat...
+...                               ^
+Function body:           def _run_erb_app47views47registries47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h2>Viewing Registry: "; @output_buffer.concat((h @registry.name ).to_s); @output_buffer.concat "</h2>\n\n"
+
+;  if flash[:notice] ; @output_buffer.concat "\n<div class=\"success\">"
+; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</div>\n"
+;  end ; @output_buffer.concat "\n\n<div>\n  <table>\n    "
+
+
+
+;  @registry.items.each do |i| ; @output_buffer.concat "\n      <tr>\n        <table>\n          <tr>\n            <td rowspan=3><img src=\""
+
+
+
+; @output_buffer.concat((h i.picture ).to_s); @output_buffer.concat "\" width=\"100px\" height=\"100px\"></td>\n            <td colspan=3>"
+; @output_buffer.concat(( link_to i.name, i.website ).to_s); @output_buffer.concat "</td>\n          </tr>\n          <tr>\n            <td>Price: $"
+
+
+; @output_buffer.concat((h i.price ).to_s); @output_buffer.concat " ea.</td>\n            <td>SKU: "
+; @output_buffer.concat((h i.sku ).to_s); @output_buffer.concat "</td>\n            <td>Qty: "
+; @output_buffer.concat((h i.quantity - i.qtybought ).to_s); @output_buffer.concat "</td>\n          </tr>\n          <tr>\n            <td colspan=2><b>Located At:\n              "
+
+
+
+;  @store = i.store ; @output_buffer.concat "\n              "
+; @output_buffer.concat(( link_to @store.name, @store.website ).to_s); @output_buffer.concat "\n            </b></td>\n            <td>\n              "
+
+
+; @output_buffer.concat(( button_to 'Buy', :controller => "items", :action => "buy", :id => i ).to_s); @output_buffer.concat " \n              "
+; @output_buffer.concat(( button_to 'Edit', :controller => "items", :action => "edit", :id => i ).to_s); @output_buffer.concat "\n              "
+; @output_buffer.concat(( button_to 'Delete', :controller => "items", :action => "destroy", { :id => i, :confirm => 'Are you sure?' } ).to_s); @output_buffer.concat "\n            </td>\n          </tr>\n        </table>\n      </tr>\n    "
+
+
+
+
+;  end ; @output_buffer.concat "\n  </table>\n</div>\n\n"
+
+
+
+; @output_buffer.concat(( link_to 'Add Item', new_registry_item_path(@registry) ).to_s); @output_buffer.concat " | \n"
+; @output_buffer.concat(( link_to 'Edit', edit_registry_path(@registry) ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Back', registries_path ).to_s); @output_buffer.concat "\n"
+; @output_buffer.force_encoding(__ENCODING__)
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `block in render_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `block in custom'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `block in respond'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/kbeswick/git-repos/wms/app/controllers/registries_controller.rb:18:in `show'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action_with_flash'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:8:in `synchronize'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+ActionView::TemplateError (/home/kbeswick/git-repos/wms/app/views/registries/show.html.erb:29: syntax error, unexpected ')', expecting tASSOC
+...:confirm => 'Are you sure?' } ).to_s); @output_buffer.concat...
+...                               ^) on line #29 of app/views/registries/show.html.erb:
+26:             <td>
+27:               <%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %> 
+28:               <%= button_to 'Edit', :controller => "items", :action => "edit", :id => i %>
+29:               <%= button_to 'Delete', :controller => "items", :action => "destroy", { :id => i, :confirm => 'Are you sure?' } %>
+30:             </td>
+31:           </tr>
+32:         </table>
+
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (60.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:16:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 1) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 96ms (View: 75, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#destroy (for 208.96.73.148 at 2010-06-30 07:16:50) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "confirm"=>"Are you sure?", "id"=>"1"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 1) [0m
+  [4;35;1mRegistry Load (0.3ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mItem Destroy (0.2ms)[0m   [0mDELETE FROM "items" WHERE "id" = 1[0m
+  [4;36;1mSQL (18.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2/items
+Completed in 33ms (DB: 19) | 302 Found [http://kevinbeswick.com/items/destroy/1?confirm=Are+you+sure%3F]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:16:50) [GET]
+  Parameters: {"registry_id"=>"2"}
+Rendering template within layouts/application
+Rendering items/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://kevinbeswick.com/registries/2/items]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:16:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:20:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 95ms (View: 74, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:20:37) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"2"}
+Rendering template within layouts/application
+Rendering items/index
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://kevinbeswick.com/items/index/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:20:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.4ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.3ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 44ms (View: 35, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:20:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 23ms (View: 13, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:22:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 100ms (View: 75, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:22:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRegistry Load (0.5ms)[0m   [0mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;36;1mItem Load (0.6ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;35;1mStore Load (0.4ms)[0m   [0mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:22:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#buy (for 208.96.73.148 at 2010-06-30 07:22:22) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"2"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/buy
+Completed in 46ms (View: 37, DB: 1) | 200 OK [http://kevinbeswick.com/items/buy/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#edit (for 208.96.73.148 at 2010-06-30 07:22:26) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"2"}
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mSELECT * FROM "items" WHERE ("items"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/edit
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://kevinbeswick.com/items/edit/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#index (for 208.96.73.148 at 2010-06-30 07:22:30) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"2"}
+Rendering template within layouts/application
+Rendering items/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://kevinbeswick.com/items/index/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#index (for 208.96.73.148 at 2010-06-30 07:22:38) [GET]
+  [4;35;1mRegistry Load (1.1ms)[0m   [0mSELECT * FROM "registries" [0m
+Rendering template within layouts/application
+Rendering registries/index
+Completed in 161ms (View: 14, DB: 1) | 200 OK [http://kevinbeswick.com/registries]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:22:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.4ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:23:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.3ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 92ms (View: 70, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#destroy (for 208.96.73.148 at 2010-06-30 07:23:58) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "id"=>"2"}
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items"."id" = 2) [0m
+  [4;36;1mRegistry Load (0.3ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mItem Destroy (0.2ms)[0m   [0;1mDELETE FROM "items" WHERE "id" = 2[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 18ms (DB: 2) | 302 Found [http://kevinbeswick.com/items/destroy/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:23:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://kevinbeswick.com/registries/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#new (for 208.96.73.148 at 2010-06-30 07:24:01) [GET]
+  Parameters: {"registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.5ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering items/new
+  [4;35;1mStore Load (1.5ms)[0m   [0mSELECT * FROM "stores" ORDER BY name[0m
+Completed in 65ms (View: 52, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2/items/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ItemsController#create (for 208.96.73.148 at 2010-06-30 07:24:23) [POST]
+  Parameters: {"authenticity_token"=>"5NUxNnai/Vx5nE10xydi5FYMXAGcFeRLhAXmbbUbVEg=", "item"=>{"name"=>"Pan", "price"=>"49.99", "store_id"=>"3", "sku"=>"k4j2k34j23kj", "quantity"=>"2", "website"=>"http://www.canadiantire.ca/", "picture"=>"http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg"}, "commit"=>"Create", "registry_id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (23.3ms)[0m   [0;1mINSERT INTO "items" ("name", "registry_id", "price", "store_id", "sku", "quantity", "website", "picture", "created_at", "updated_at", "qtybought") VALUES(E'Pan', 2, 49.99, 3, E'k4j2k34j23kj', 2, E'http://www.canadiantire.ca/', E'http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg', '2010-06-30 03:24:23.693831', '2010-06-30 03:24:23.693831', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/2
+Completed in 1214ms (DB: 28) | 302 Found [http://kevinbeswick.com/registries/2/items]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:24:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (2.7ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.7ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+
+ActionView::TemplateError (nil can't be coerced into Fixnum) on line #19 of app/views/registries/show.html.erb:
+16:           <tr>
+17:             <td>Price: $<%=h i.price %> ea.</td>
+18:             <td>SKU: <%=h i.sku %></td>
+19:             <td>Qty: <%=h i.quantity - i.qtybought %></td>
+20:           </tr>
+21:           <tr>
+22:             <td colspan=2><b>Located At:
+
+    app/views/registries/show.html.erb:19:in `-'
+    app/views/registries/show.html.erb:19:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:25:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.6ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.5ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+
+ActionView::TemplateError (nil can't be coerced into Fixnum) on line #19 of app/views/registries/show.html.erb:
+16:           <tr>
+17:             <td>Price: $<%=h i.price %> ea.</td>
+18:             <td>SKU: <%=h i.sku %></td>
+19:             <td>Qty: <%=h i.quantity - i.qtybought %></td>
+20:           </tr>
+21:           <tr>
+22:             <td colspan=2><b>Located At:
+
+    app/views/registries/show.html.erb:19:in `-'
+    app/views/registries/show.html.erb:19:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (70.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:25:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+
+ActionView::TemplateError (nil can't be coerced into Fixnum) on line #19 of app/views/registries/show.html.erb:
+16:           <tr>
+17:             <td>Price: $<%=h i.price %> ea.</td>
+18:             <td>SKU: <%=h i.sku %></td>
+19:             <td>Qty: <%=h i.quantity - i.qtybought %></td>
+20:           </tr>
+21:           <tr>
+22:             <td colspan=2><b>Located At:
+
+    app/views/registries/show.html.erb:19:in `-'
+    app/views/registries/show.html.erb:19:in `block in _run_erb_app47views47registries47show46html46erb'
+    app/views/registries/show.html.erb:9
+    app/controllers/registries_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (63.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing RegistriesController#show (for 208.96.73.148 at 2010-06-30 07:25:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRegistry Load (0.4ms)[0m   [0;1mSELECT * FROM "registries" WHERE ("registries"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering registries/show
+  [4;35;1mItem Load (0.6ms)[0m   [0mSELECT * FROM "items" WHERE ("items".registry_id = 2) [0m
+  [4;36;1mStore Load (0.7ms)[0m   [0;1mSELECT * FROM "stores" WHERE ("stores"."id" = 3) [0m
+Completed in 97ms (View: 75, DB: 2) | 200 OK [http://kevinbeswick.com/registries/2]

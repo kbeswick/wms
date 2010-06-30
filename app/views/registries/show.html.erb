@@ -23,7 +23,11 @@
               <% @store = i.store %>
               <%= link_to @store.name, @store.website %>
             </b></td>
-            <td><%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %></td>
+            <td>
+              <%= button_to 'Buy', :controller => "items", :action => "buy", :id => i %> 
+              <%= button_to 'Edit', :controller => "items", :action => "edit", :id => i %>
+              <%= button_to 'Delete', { :controller => "items", :action => "destroy", :id => i }, :confirm => 'Are you sure?' %>
+            </td>
           </tr>
         </table>
       </tr>
