@@ -11,7 +11,18 @@
     <div id="title_header">
       <div class="container">
         <div id="wms_logo" class="span-16"></div>
-        <div id="first_menu" class="span-8 last"><h3>Home &nbsp;&nbsp; Something &nbsp;&nbsp; Login</h3></div>
+        <div id="first_menu" class="span-8 last">
+          <h3>
+            <%= link_to 'Home', root_url %> &nbsp;&nbsp; 
+            Something &nbsp;&nbsp;
+            <% if current_user %>
+              <%= link_to "Edit Profile", edit_user_path(:current) %> &nbsp;&nbsp;
+              <%= link_to "Logout", logout_path %>
+            <% else %>  
+              <%= link_to "Log in", login_path %>  
+            <% end %>
+           </h3>
+         </div>
       </div>
     </div>
     <div id="second_header">

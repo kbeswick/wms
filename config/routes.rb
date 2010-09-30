@@ -60,17 +60,14 @@ Wms::Application.routes.draw do |map|
   map.resources :registries, :has_many => :items
   map.resources :stores, :has_one => :address
 
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.login 'login', :controller => 'user_sessions', :action => 'new'
+  map.logout 'logout', :controller =>'user_sessions', :action => 'destroy'
+  map.resource :user_session
+  map.resource :account, :controller => "users"
   map.resources :users
-
-  map.resource :session
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.root :controller => "home"
- 
+  root :to => "home#index" 
 
 end
