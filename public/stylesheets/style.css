@@ -7,6 +7,16 @@ body {
   background-repeat:repeat-x;
   height: 55px;
 }
+
+#title_header a:link, #title_header a:visited {
+  color:white;
+  text-decoration: none;
+}
+
+#title_header a:hover {
+  color: #1fadff;
+}
+
 #wms_logo {
   background-image: url('wmslogo.png');
   height: 55px;
@@ -14,10 +24,12 @@ body {
 }
 #second_header {
   background-color: #1fadff;
-  height: 100px;
+  height: 50px;
 }
 #second_menu {
   height: 100px;
+  padding-top:18px;
+  padding-left: 50px;
 }
 #first_menu {
   float: right;

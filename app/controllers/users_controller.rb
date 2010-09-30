@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:show, :edit, :update, :index, :create, :new]
+
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.html
+    end
+  end
 
   def new
     @user = User.new

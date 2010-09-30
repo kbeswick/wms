@@ -1,0 +1,15 @@
+<h1>Guest List</h1>
+
+<%= link_to 'Invite a Guest', new_user_path %>
+<br />
+<br />
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%=h user.login %> - <%=h user.email %></li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Invite a Guest', new_user_path %>

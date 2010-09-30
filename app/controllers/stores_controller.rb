@@ -15,7 +15,7 @@ class StoresController < ApplicationController
   def new
     @store = Store.new
     
-    session[:return_to] ||= request.referer # store referring url
+    session[:temp_return] ||= request.referer # store referring url
     
     respond_to do |format|
       format.html # new.html.erb
@@ -29,7 +29,7 @@ def create
     respond_to do |format|
       if @store.save
         flash[:notice] = 'Store was successfully added.'
-        format.html { redirect_to session[:return_to] }
+        format.html { redirect_to session[:temp_return] }
         format.xml  { render :xml => @store, :status => :created, :location => @store }
       else
         format.html { render :action => "new" }
