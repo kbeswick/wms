@@ -1,12 +1,11 @@
 class User < ActiveRecord::Base
   acts_as_authentic
-  has_many :addresses
+  has_one :address
 
   accepts_nested_attributes_for :addresses, :allow_destroy => :false,
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
 
   validates :email,
-            :message => "Must be a vaild email address.",
             :presence => true,
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
 
