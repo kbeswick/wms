@@ -15238,3 +15238,4 @@ DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => fa
   [1m[35mSQL (0.2ms)[0m  COMMIT
 Rendered registries/index.html.erb within layouts/application (200.4ms)
 Completed 200 OK in 215ms (Views: 200.7ms | ActiveRecord: 4.1ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
