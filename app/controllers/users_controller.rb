@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :only => [:show, :edit, :update, :index, :create, :new]
+  before_filter :require_user, :only => [:show, :edit, :update, :index]
 
   def index
     @users = User.all
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    address = @user.addresses.build
   end
 
   def create

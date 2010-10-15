@@ -1,0 +1,29 @@
+<%= form.fields_for :addresses do |address_form| %>
+  <h2>Address</h2>
+  <div class="field">
+    <%= address_form.label :title, 'Title:' %><br />
+    <%= address_form.text_field :title %><br />
+    <br />
+    <%= address_form.label :street, 'Street:' %><br />
+    <%= address_form.text_field :street %><br />
+    <br />
+    <%= address_form.label :street_two, 'Street 2:' %><br />
+    <%= address_form.text_field :street_two %><br />
+    <br />
+    <%= address_form.label :city, 'City:' %><br />
+    <%= address_form.text_field :city %><br />
+    <br />
+    <%= address_form.label :province, 'Province:' %><br />
+    <%= address_form.text_field :province %><br />
+    <br />
+    <%= address_form.label :country, 'Country:' %><br />
+    <%= address_form.text_field :country %><br />
+    <br />
+    <%= address_form.label :postal_code, 'Postal Code:' %><br />
+    <%= address_form.text_field :postal_code %><br />
+    <br />
+    <%= address_form.label :phone_number, 'Phone Number:' %><br />
+    <%= address_form.text_field :phone_number %><br />
+    <br />
+  </div>
+<% end %>

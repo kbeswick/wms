@@ -1,0 +1,7 @@
+<h1>Create Event</h1>
+
+<% form_for @event do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Create" %>
+<% end %>

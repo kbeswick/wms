@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100626192133) do
+ActiveRecord::Schema.define(:version => 20101001173434) do
 
   create_table "addresses", :force => true do |t|
     t.string   "title"
@@ -21,7 +21,16 @@ ActiveRecord::Schema.define(:version => 20100626192133) do
     t.string   "country"
     t.string   "postal_code"
     t.string   "phone_number"
-    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "location",    :null => false
+    t.string   "description"
+    t.datetime "start_time",  :null => false
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,7 +76,10 @@ ActiveRecord::Schema.define(:version => 20100626192133) do
 
   create_table "users", :force => true do |t|
     t.string   "login",                              :null => false
-    t.string   "email",                              :null => false
+    t.string   "email"
+    t.string   "first_name",                         :null => false
+    t.string   "last_name",                          :null => false
+    t.integer  "address_id"
     t.string   "crypted_password",                   :null => false
     t.string   "password_salt",                      :null => false
     t.string   "persistence_token",                  :null => false

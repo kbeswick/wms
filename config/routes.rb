@@ -59,6 +59,7 @@ Wms::Application.routes.draw do |map|
 
   map.resources :registries, :has_many => :items
   map.resources :stores, :has_one => :address
+  map.resources :events
 
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller =>'user_sessions', :action => 'destroy'

@@ -1,0 +1,23 @@
+<h1><%=h @event.name %></h1>
+
+<p>
+  <b>Location</b>
+  <%=h @event.location %>
+</p>
+
+<p>
+  <b>Start Time</b>
+  <%=h @event.start_time %>
+</p>
+
+<p>
+  <b>End Time:</b>
+  <%=h @event.end_time %>
+</p>
+
+<p>
+  <b>Description:</b><br />
+  <%=h @event.description %>
+</p>
+
+<%= link_to 'Edit', edit_event_path %>
