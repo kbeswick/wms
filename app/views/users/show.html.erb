@@ -32,6 +32,9 @@
   <b>Current login ip:</b>
   <%=h @user.current_login_ip %>
 </p>
+<br />
 
+<%= render :partial => "addresses/address",
+           :collection => @user.addresses %>
 
 <%= link_to 'Edit', edit_account_path %>
