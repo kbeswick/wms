@@ -12770,3 +12770,1889 @@ ArgumentError (No association found for name `addresses'. Has it been defined ye
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+
+
+Started GET "/users/1" for 142.51.8.234 at 2010-10-15 17:16:16 +0000
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (3.1ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (2.0ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'c95933e15ee64d172b9d56a21877fc168453d672c8c8fac9b1db00123e0b70f748ec1c62477c4dea2e6da344630fd6802192aa260d32d3eb813fbbebd50bcb2b') LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:16:16.348715', "perishable_token" = 'WideWIJ6k4vEsVOCdvp', "updated_at" = '2010-10-15 17:16:16.349559' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (16.5ms)[0m  COMMIT
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 1)) AS subquery
+PGError: ERROR:  column addresses.user_id does not exist
+LINE 1: ...nt_id FROM (SELECT 1 FROM "addresses"  WHERE     ("addresses...
+                                                             ^
+: SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses"  WHERE     ("addresses".user_id = 1)) AS subquery
+Rendered users/show.html.erb within layouts/application (51.3ms)
+Completed   in 324ms
+
+ActionView::Template::Error (PGError: ERROR:  column addresses.user_id does not exist
+LINE 1: ...nt_id FROM (SELECT 1 FROM "addresses"  WHERE     ("addresses...
+                                                             ^
+: SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses"  WHERE     ("addresses".user_id = 1)) AS subquery):
+    35: <br />
+    36: 
+    37: <%= render :partial => "addresses/address",
+    38:            :collection => @user.addresses %>
+    39: 
+    40: <%= link_to 'Edit', edit_account_path %>
+  app/views/users/show.html.erb:38:in `_app_views_users_show_html_erb___544380709_82105700_859173864'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (2.5ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateAddresses (1)
+Migrating to CreateUserSessions (2)
+Migrating to CreateUsers (3)
+Migrating to CreateStores (20100618164001)
+Migrating to CreateRegistries (20100618165829)
+Migrating to CreateItems (20100618165835)
+Migrating to AddQtyBoughtToItems (20100626192133)
+Migrating to CreateEvents (20101001173434)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (3.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"addresses"'::regclass
+  [1m[36mSQL (0.1ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (1.7ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'addresses'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"events"'::regclass
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'events'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"items"'::regclass
+[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'items'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"registries"'::regclass
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'registries'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.4ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"stores"'::regclass
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'stores'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"user_sessions"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"user_sessions"'::regclass
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'user_sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_user_sessions_on_session_id on user_sessions (0.3ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 24783
+ AND a.attnum IN (2)
+  [1m[36mColumns for index index_user_sessions_on_updated_at on user_sessions (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 24783
+ AND a.attnum IN (5)
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.7ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35mSQL (1.1ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (2.6ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (29.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (2.5ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (265.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_info'
+ 
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (1.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateAddresses (1)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (487.5ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "title" character varying(255), "street" character varying(255), "street_two" character varying(255), "city" character varying(255), "province" character varying(255), "country" character varying(255), "postal_code" character varying(255), "phone_number" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (3.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.6ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('1')[0m
+  [1m[35mPK and serial sequence (2.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.2ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (70.6ms)[0m  COMMIT
+Migrating to CreateUserSessions (2)
+  [1m[36mSQL (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (120.8ms)[0m  CREATE TABLE "user_sessions" ("id" serial primary key, "session_id" character varying(255) NOT NULL, "data" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'user_sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (3.2ms)[0m  CREATE INDEX "index_user_sessions_on_session_id" ON "user_sessions" ("session_id")
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'user_sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mColumns for index index_user_sessions_on_session_id on user_sessions (0.4ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 24867
+ AND a.attnum IN (2)
+  [1m[36mSQL (131.4ms)[0m  [1mCREATE INDEX "index_user_sessions_on_updated_at" ON "user_sessions" ("updated_at")[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('2')[0m
+  [1m[35mPK and serial sequence (2.6ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.3ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+Migrating to CreateUsers (3)
+  [1m[36mSQL (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.1ms)[0m  CREATE TABLE "users" ("id" serial primary key, "login" character varying(255) NOT NULL, "email" character varying(255), "first_name" character varying(255) NOT NULL, "last_name" character varying(255) NOT NULL, "address_id" integer, "crypted_password" character varying(255) NOT NULL, "password_salt" character varying(255) NOT NULL, "persistence_token" character varying(255) NOT NULL, "single_access_token" character varying(255) NOT NULL, "perishable_token" character varying(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" timestamp, "current_login_at" timestamp, "last_login_at" timestamp, "current_login_ip" character varying(255), "last_login_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.2ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.1ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('3')
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.3ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (119.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateStores (20100618164001)
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (7.2ms)[0m  [1mCREATE TABLE "stores" ("id" serial primary key, "name" character varying(255), "website" character varying(255), "address_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100618164001')[0m
+  [1m[35mPK and serial sequence (2.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.2ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (84.9ms)[0m  COMMIT
+Migrating to CreateRegistries (20100618165829)
+  [1m[36mSQL (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.5ms)[0m  CREATE TABLE "registries" ("id" serial primary key, "name" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.1ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.0ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100618165829')
+  [1m[36mPK and serial sequence (2.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (0.9ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (85.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateItems (20100618165835)
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (5.4ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "name" character varying(255), "registry_id" integer, "price" decimal, "store_id" integer, "sku" character varying(255), "quantity" integer, "website" character varying(255), "picture" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.6ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100618165835')[0m
+  [1m[35mPK and serial sequence (2.5ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.2ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (40.4ms)[0m  COMMIT
+Migrating to AddQtyBoughtToItems (20100626192133)
+  [1m[36mSQL (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  ALTER TABLE "items" ADD COLUMN "qtybought" integer
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.6ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (1.2ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100626192133')
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.2ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEvents (20101001173434)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (111.1ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "name" character varying(255) NOT NULL, "location" character varying(255) NOT NULL, "description" character varying(255), "start_time" timestamp NOT NULL, "end_time" timestamp, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+[0m
+  [1m[35mPK and custom sequence (1.0ms)[0m   SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101001173434')[0m
+  [1m[35mPK and serial sequence (2.0ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"schema_migrations"'::regclass
+  [1m[36mPK and custom sequence (0.9ms)[0m  [1m SELECT attr.attname,
+ CASE
+ WHEN split_part(def.adsrc, '''', 2) ~ '.' THEN
+ substr(split_part(def.adsrc, '''', 2),
+ strpos(split_part(def.adsrc, '''', 2), '.')+1)
+ ELSE split_part(def.adsrc, '''', 2)
+ END
+ FROM pg_class t
+ JOIN pg_attribute attr ON (t.oid = attrelid)
+ JOIN pg_attrdef def ON (adrelid = attrelid AND adnum = attnum)
+ JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])
+ WHERE t.oid = '"schema_migrations"'::regclass
+ AND cons.contype = 'p'
+ AND def.adsrc ~* 'nextval'
+[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (3.0ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"addresses"'::regclass
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'addresses'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.9ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"events"'::regclass
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'events'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.9ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"items"'::regclass
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'items'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (61.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"registries"'::regclass
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'registries'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.7ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"stores"'::regclass
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'stores'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"user_sessions"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (3.0ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"user_sessions"'::regclass
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'user_sessions'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mColumns for index index_user_sessions_on_session_id on user_sessions (0.2ms)[0m  [1m SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 24867
+ AND a.attnum IN (2)
+[0m
+  [1m[35mColumns for index index_user_sessions_on_updated_at on user_sessions (0.2ms)[0m   SELECT a.attnum, a.attname
+ FROM pg_attribute a
+ WHERE a.attrelid = 24867
+ AND a.attnum IN (5)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'users'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+[0m
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+
+
+Started GET "/users/new" for 142.51.8.234 at 2010-10-15 17:18:14 +0000
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#new as HTML
+  [1m[36mSQL (2.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (1.0ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered addresses/_form.erb (8.6ms)
+Rendered users/_form.erb (12.7ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___922917493_84084350_239511867 at /home/kbeswick/git-repos/wms/app/views/users/new.html.erb:3)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'c95933e15ee64d172b9d56a21877fc168453d672c8c8fac9b1db00123e0b70f748ec1c62477c4dea2e6da344630fd6802192aa260d32d3eb813fbbebd50bcb2b') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered users/new.html.erb within layouts/application (153.2ms)
+Completed 200 OK in 312ms (Views: 153.1ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/account" for 142.51.8.234 at 2010-10-15 17:18:40 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go7uO8QgcOJiMTAihtTffyIicY5jSMcCN8wYODqMm0=", "user"=>{"login"=>"kbeswick", "email"=>"kevinbeswick00@gmail.com", "first_name"=>"Kevin", "last_name"=>"Beswick", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "addresses_attributes"=>{"0"=>{"title"=>"kbeswick address", "street"=>"5-271 Cedar St", "street_two"=>"", "city"=>"Sudbury", "province"=>"Ontario", "country"=>"Canada", "postal_code"=>"P3B 1M8", "phone_number"=>"705-677-9225"}}}, "commit"=>"Register"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('kevinbeswick00@gmail.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('kbeswick')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'qEmNChB5SRAJjOa7pn1F') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."login" = 'kbeswick') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = 'c95933e15ee64d172b9d56a21877fc168453d672c8c8fac9b1db00123e0b70f748ec1c62477c4dea2e6da344630fd6802192aa260d32d3eb813fbbebd50bcb2b') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mPK and serial sequence (3.4ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("address_id", "created_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "first_name", "last_login_at", "last_login_ip", "last_name", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token", "updated_at") VALUES (NULL, '2010-10-15 17:18:40.303795', '103d51f55f1dad39158e2e385e669c7b19e610776621b966c78d38676cf42a86a1da477b5060a3833fc536f61b9b1f85369c16dd2557f49742afe27743336ecc', '2010-10-15 17:18:40.303244', '142.51.8.234', 'kevinbeswick00@gmail.com', 0, 'Kevin', NULL, NULL, 'Beswick', '2010-10-15 17:18:40.303479', 'kbeswick', 1, '87HWCfALrqaeRjvHjRC', 'XmF8sVdx7VWQlujZ2u', '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690', 'qEmNChB5SRAJjOa7pn1F', '2010-10-15 17:18:40.303795') RETURNING "id"[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"addresses"'::regclass
+[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "addresses" ("city", "country", "created_at", "phone_number", "postal_code", "province", "street", "street_two", "title", "updated_at", "user_id") VALUES ('Sudbury', 'Canada', '2010-10-15 17:18:40.324103', '705-677-9225', 'P3B 1M8', 'Ontario', '5-271 Cedar St', '', 'kbeswick address', '2010-10-15 17:18:40.324103', 1) RETURNING "id"
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/account
+Completed 302 Found in 278ms
+
+
+Started GET "/account" for 142.51.8.234 at 2010-10-15 17:18:40 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:18:40.614777', "perishable_token" = 'e4Ljg3UN1hCYq33VHs', "updated_at" = '2010-10-15 17:18:40.615479' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 1)) AS subquery
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".user_id = 1)[0m
+Rendered addresses/_address.erb (8.1ms)
+Rendered users/show.html.erb within layouts/application (66.5ms)
+Completed 200 OK in 221ms (Views: 69.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/registries" for 142.51.8.234 at 2010-10-15 17:19:29 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[35mRegistry Load (0.5ms)[0m  SELECT "registries".* FROM "registries"
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 17:19:29.839015', "perishable_token" = 'g6Tn6KYBiOTS94g0bclw', "updated_at" = '2010-10-15 17:19:29.839656' WHERE ("users"."id" = 1)
+  [1m[36mSQL (54.9ms)[0m  [1mCOMMIT[0m
+Rendered registries/index.html.erb within layouts/application (213.1ms)
+Completed 200 OK in 227ms (Views: 160.0ms | ActiveRecord: 58.0ms)
+
+
+Started GET "/registries" for 142.51.8.234 at 2010-10-15 17:19:33 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[35mRegistry Load (0.3ms)[0m  SELECT "registries".* FROM "registries"
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 17:19:34.016600', "perishable_token" = 'NHlcYirtdU8INeTabSJ', "updated_at" = '2010-10-15 17:19:34.017239' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Rendered registries/index.html.erb within layouts/application (157.2ms)
+Completed 200 OK in 192ms (Views: 158.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/registries/new" for 142.51.8.234 at 2010-10-15 17:19:47 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#new as HTML
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_registries_new_html_erb__306631730_83471440_239511867 at /home/kbeswick/git-repos/wms/app/views/registries/new.html.erb:3)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 17:19:48.058910', "perishable_token" = 'jiBF71MBQuOiZRMskVMc', "updated_at" = '2010-10-15 17:19:48.059565' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Rendered registries/new.html.erb within layouts/application (180.2ms)
+Completed 200 OK in 216ms (Views: 201.2ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/registries" for 142.51.8.234 at 2010-10-15 17:20:01 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go7uO8QgcOJiMTAihtTffyIicY5jSMcCN8wYODqMm0=", "registry"=>{"name"=>"Wedding Registry"}, "commit"=>"Create"}
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mPK and serial sequence (2.5ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"registries"'::regclass
+[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "registries" ("created_at", "name", "updated_at", "user_id") VALUES ('2010-10-15 17:20:01.441737', 'Wedding Registry', '2010-10-15 17:20:01.441737', NULL) RETURNING "id"
+  [1m[36mSQL (16.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/registries/1
+Completed 302 Found in 76ms
+
+
+Started GET "/registries/1" for 142.51.8.234 at 2010-10-15 17:20:01 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mRegistry Load (0.4ms)[0m  [1mSELECT "registries".* FROM "registries" WHERE ("registries"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE ("items".registry_id = 1)[0m
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:20:02.158736', "perishable_token" = 'oNqiTcmSUPHOVQLwY57', "updated_at" = '2010-10-15 17:20:02.159582' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (219.6ms)[0m  COMMIT
+Rendered registries/show.html.erb within layouts/application (689.0ms)
+Completed 200 OK in 789ms (Views: 549.7ms | ActiveRecord: 225.0ms)
+
+
+Started GET "/registries/1/items/new" for 142.51.8.234 at 2010-10-15 17:20:12 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by ItemsController#new as HTML
+  Parameters: {"registry_id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mRegistry Load (0.9ms)[0m  SELECT "registries".* FROM "registries" WHERE ("registries"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mStore Load (0.6ms)[0m  [1mSELECT "stores".* FROM "stores" ORDER BY name[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_items_new_html_erb___1050088726_84369990_239511867 at /home/kbeswick/git-repos/wms/app/views/items/new.html.erb:3)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:20:13.291143', "perishable_token" = '9bfNNSZu0LX9HQf6uG', "updated_at" = '2010-10-15 17:20:13.291910' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered items/new.html.erb within layouts/application (219.7ms)
+Completed 200 OK in 294ms (Views: 220.5ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/stores/new" for 142.51.8.234 at 2010-10-15 17:21:02 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by StoresController#new as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_stores_new_html_erb___171849491_91731990_239511867 at /home/kbeswick/git-repos/wms/app/views/stores/new.html.erb:3)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:21:02.648271', "perishable_token" = 'FuOKSenDjjwdGJ1qLPg', "updated_at" = '2010-10-15 17:21:02.648974' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered stores/new.html.erb within layouts/application (164.4ms)
+Completed 200 OK in 302ms (Views: 256.0ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/stores" for 142.51.8.234 at 2010-10-15 17:57:56 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by StoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go7uO8QgcOJiMTAihtTffyIicY5jSMcCN8wYODqMm0=", "store"=>{"name"=>"Wal-Mart", "website"=>"http://www.walmart.ca"}, "commit"=>"Create"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"stores"'::regclass
+  [1m[36mSQL (90.4ms)[0m  [1mINSERT INTO "stores" ("address_id", "created_at", "name", "updated_at", "website") VALUES (NULL, '2010-10-15 17:57:56.674214', 'Wal-Mart', '2010-10-15 17:57:56.674214', 'http://www.walmart.ca') RETURNING "id"[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+Redirected to http://kevinbeswick.com:3000/registries/1/items/new
+Completed 302 Found in 125ms
+
+
+Started GET "/registries/1/items/new" for 142.51.8.234 at 2010-10-15 17:57:56 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by ItemsController#new as HTML
+  Parameters: {"registry_id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mRegistry Load (0.3ms)[0m  SELECT "registries".* FROM "registries" WHERE ("registries"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mStore Load (0.4ms)[0m  [1mSELECT "stores".* FROM "stores" ORDER BY name[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_items_new_html_erb___1050088726_91774730_239511867 at /home/kbeswick/git-repos/wms/app/views/items/new.html.erb:3)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 17:57:57.179843', "perishable_token" = 'kpKSgtsZLSjocdTDIP8', "updated_at" = '2010-10-15 17:57:57.180529' WHERE ("users"."id" = 1)
+  [1m[36mSQL (78.7ms)[0m  [1mCOMMIT[0m
+Rendered items/new.html.erb within layouts/application (294.0ms)
+Completed 200 OK in 366ms (Views: 216.6ms | ActiveRecord: 179.4ms)
+
+
+Started POST "/registries/1/items" for 142.51.8.234 at 2010-10-15 17:58:29 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go7uO8QgcOJiMTAihtTffyIicY5jSMcCN8wYODqMm0=", "item"=>{"name"=>"Pan", "price"=>"39.99", "store_id"=>"1", "sku"=>"jk12h3hj14h", "quantity"=>"2", "website"=>"http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg", "picture"=>"http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg"}, "commit"=>"Create", "registry_id"=>"1"}
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mRegistry Load (0.3ms)[0m  [1mSELECT "registries".* FROM "registries" WHERE ("registries"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.3ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"items"'::regclass
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("created_at", "name", "picture", "price", "qtybought", "quantity", "registry_id", "sku", "store_id", "updated_at", "website") VALUES ('2010-10-15 17:58:30.067906', 'Pan', 'http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg', 39.99, 0, 2, 1, 'jk12h3hj14h', 1, '2010-10-15 17:58:30.067906', 'http://cdn.gadgetvenue.com/wp-content/uploads/2008/11/digital-thermoter-pan.jpg') RETURNING "id"[0m
+  [1m[35mSQL (55.6ms)[0m  COMMIT
+Redirected to http://kevinbeswick.com:3000/registries/1
+Completed 302 Found in 244ms
+
+
+Started GET "/registries/1" for 142.51.8.234 at 2010-10-15 17:58:30 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mRegistry Load (0.3ms)[0m  SELECT "registries".* FROM "registries" WHERE ("registries"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE ("items".registry_id = 1)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"items"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mStore Load (0.3ms)[0m  [1mSELECT "stores".* FROM "stores" WHERE ("stores"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"stores"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 17:58:30.579286', "perishable_token" = 'AeNfutFj71AhOC4Xt58', "updated_at" = '2010-10-15 17:58:30.579920' WHERE ("users"."id" = 1)
+  [1m[36mSQL (68.5ms)[0m  [1mCOMMIT[0m
+Rendered registries/show.html.erb within layouts/application (347.3ms)
+Completed 200 OK in 366ms (Views: 277.1ms | ActiveRecord: 75.0ms)
+
+
+Started GET "/users" for 142.51.8.234 at 2010-10-15 17:58:42 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 17:58:43.011263', "perishable_token" = 'BmTyIlnOlwFrGEa0bhmr', "updated_at" = '2010-10-15 17:58:43.012240' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 173ms (Views: 8.0ms | ActiveRecord: 65.5ms)

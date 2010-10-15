@@ -9,6 +9,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :country
       t.string :postal_code
       t.string :phone_number
+      t.references :user
 
       t.timestamps
     end

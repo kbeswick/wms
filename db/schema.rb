@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20101001173434) do
     t.string   "country"
     t.string   "postal_code"
     t.string   "phone_number"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
