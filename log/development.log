@@ -15239,3 +15239,821 @@ DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => fa
 Rendered registries/index.html.erb within layouts/application (200.4ms)
 Completed 200 OK in 215ms (Views: 200.7ms | ActiveRecord: 4.1ms)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kbeswick/git-repos/wms/config/routes.rb:1)
+
+
+Started GET "/registries" for 142.51.8.234 at 2010-10-15 18:41:30 +0000
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.1ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.1ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (0.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TIME ZONE
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[36mSQL (2.8ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35mRegistry Load (0.4ms)[0m  SELECT "registries".* FROM "registries"
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:41:31.278419', "perishable_token" = 'ccX6zgxK9FlP5h6qGR4B', "updated_at" = '2010-10-15 18:41:31.279360' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+Rendered registries/index.html.erb within layouts/application (220.7ms)
+Completed 200 OK in 323ms (Views: 218.6ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/users" for 142.51.8.234 at 2010-10-15 18:41:31 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:41:31.842360', "perishable_token" = 'N9oxJPD3R4PUu5K7ydls', "updated_at" = '2010-10-15 18:41:31.842962' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 140ms (Views: 7.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/new" for 142.51.8.234 at 2010-10-15 18:41:39 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#new as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered addresses/_form.erb (10.8ms)
+Rendered users/_form.erb (15.9ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___502421614_85311400_282446766 at /home/kbeswick/git-repos/wms/app/views/users/new.html.erb:3)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:41:40.141276', "perishable_token" = 's8C5WmimAB9Wx0wC9ip', "updated_at" = '2010-10-15 18:41:40.142072' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered users/new.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 248ms (Views: 103.0ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/account" for 142.51.8.234 at 2010-10-15 18:42:43 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go7uO8QgcOJiMTAihtTffyIicY5jSMcCN8wYODqMm0=", "user"=>{"login"=>"weston", "email"=>"weston_sagle@hotmail.com", "first_name"=>"Weston", "last_name"=>"Sagle", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "addresses_attributes"=>{"0"=>{"title"=>"westons address", "street"=>"123 Antwerp St", "street_two"=>"", "city"=>"Sudbury", "province"=>"Ontario", "country"=>"Canada", "postal_code"=>"P3B 1A1", "phone_number"=>"705-222-2364"}}}, "commit"=>"Register"}
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('weston_sagle@hotmail.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('weston')) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '2341dea9e2ccba3fd51ff7c9ee15a7e1da6021cb40bf9d2e74ae246d7e23501c7224a3457b4c3e248a898ef6c0cd166869907000469f4b3ee0eb14e8faeb317e') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."single_access_token" = 'TDsy4eGaFP3ABy97yN3Z') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."login" = 'weston') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/kbeswick/git-repos/wms/app/controllers/users_controller.rb:19)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:42:43.696521', "perishable_token" = 'w9WM0OXCdIj9x7mW6Xp', "updated_at" = '2010-10-15 18:42:43.697050' WHERE ("users"."id" = 1)
+  [1m[36mPK and serial sequence (3.1ms)[0m  [1m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"users"'::regclass
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("address_id", "created_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "first_name", "last_login_at", "last_login_ip", "last_name", "last_request_at", "login", "login_count", "password_salt", "perishable_token", "persistence_token", "single_access_token", "updated_at") VALUES (NULL, '2010-10-15 18:42:43.698677', 'f4669c89892dff07b24bd8952640ce4e6cc4d9aa342bfe1383e69dcd5b7e718db8686f5ec850811c2b8b1385a8a3134a3b30a17a8d988ee5be444fc841ff096d', NULL, NULL, 'weston_sagle@hotmail.com', 0, 'Weston', NULL, NULL, 'Sagle', NULL, 'weston', 0, 'hB37AoT94xKvTLDuZutw', 'BPohc4MUjSgWMCtOorav', '2341dea9e2ccba3fd51ff7c9ee15a7e1da6021cb40bf9d2e74ae246d7e23501c7224a3457b4c3e248a898ef6c0cd166869907000469f4b3ee0eb14e8faeb317e', 'TDsy4eGaFP3ABy97yN3Z', '2010-10-15 18:42:43.698677') RETURNING "id"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mPK and serial sequence (2.8ms)[0m   SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = '"addresses"'::regclass
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "addresses" ("city", "country", "created_at", "phone_number", "postal_code", "province", "street", "street_two", "title", "updated_at", "user_id") VALUES ('Sudbury', 'Canada', '2010-10-15 18:42:43.704133', '705-222-2364', 'P3B 1A1', 'Ontario', '123 Antwerp St', '', 'westons address', '2010-10-15 18:42:43.704133', 2) RETURNING "id"[0m
+  [1m[35mSQL (26.6ms)[0m  COMMIT
+Redirected to http://kevinbeswick.com:3000/account
+Completed 302 Found in 301ms
+
+
+Started GET "/account" for 142.51.8.234 at 2010-10-15 18:42:43 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:42:44.014555', "perishable_token" = 'EVRbCK5ZXPEwAp13Kl5p', "updated_at" = '2010-10-15 18:42:44.015169' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 1)) AS subquery[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".user_id = 1)
+Rendered addresses/_address.erb (7.7ms)
+Rendered users/show.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 198ms (Views: 64.6ms | ActiveRecord: 44.7ms)
+
+
+Started GET "/users" for 142.51.8.234 at 2010-10-15 18:42:53 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:42:53.862936', "perishable_token" = 'GJrPsoidrmd27FbXe41L', "updated_at" = '2010-10-15 18:42:53.863685' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 168ms (Views: 10.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 65.39.26.17 at 2010-10-15 18:43:19 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+Rendered home/index.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 89ms (Views: 88.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 65.39.26.17 at 2010-10-15 18:43:50 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by HomeController#index as HTML
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+Rendered home/index.html.erb within layouts/application (79.3ms)
+Completed 200 OK in 84ms (Views: 82.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 65.39.26.17 at 2010-10-15 18:43:54 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UserSessionsController#new as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_sessions_new_html_erb__325551293_85390900_282446766 at /home/kbeswick/git-repos/wms/app/views/user_sessions/new.html.erb:3)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions_new_html_erb__325551293_85390900_282446766 at /home/kbeswick/git-repos/wms/app/views/user_sessions/new.html.erb:3)
+Rendered user_sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 107ms (Views: 38.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/user_session" for 65.39.26.17 at 2010-10-15 18:43:58 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvNTERkBaLIB5jeWC9wXJVaAd/Qudg3YFvj4rVzgQMY=", "user_session"=>{"login"=>"weston", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'weston') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/kbeswick/git-repos/wms/app/controllers/user_sessions_controller.rb:11)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "failed_login_count" = 1, "perishable_token" = 'PdkdvQNXwA5Fd57VpCm', "updated_at" = '2010-10-15 18:43:58.976423' WHERE ("users"."id" = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_sessions_new_html_erb__325551293_92822470_282446766 at /home/kbeswick/git-repos/wms/app/views/user_sessions/new.html.erb:3)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions_new_html_erb__325551293_92822470_282446766 at /home/kbeswick/git-repos/wms/app/views/user_sessions/new.html.erb:3)
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 335ms (Views: 9.2ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/user_session" for 65.39.26.17 at 2010-10-15 18:44:08 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvNTERkBaLIB5jeWC9wXJVaAd/Qudg3YFvj4rVzgQMY=", "user_session"=>{"login"=>"weston", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'weston') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/kbeswick/git-repos/wms/app/controllers/user_sessions_controller.rb:11)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_login_at" = '2010-10-15 18:44:08.440907', "current_login_ip" = '65.39.26.17', "failed_login_count" = 0, "last_request_at" = '2010-10-15 18:44:08.441139', "login_count" = 1, "perishable_token" = 'NFK7ntyQCH0HwpyMkgX', "updated_at" = '2010-10-15 18:44:08.442157' WHERE ("users"."id" = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://kevinbeswick.com:3000/account
+Completed 302 Found in 168ms
+
+
+Started GET "/account" for 65.39.26.17 at 2010-10-15 18:44:08 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:44:08.739984', "perishable_token" = 'AIoin7KqeKD81yahq4dZ', "updated_at" = '2010-10-15 18:44:08.740627' WHERE ("users"."id" = 2)[0m
+  [1m[35mSQL (15.1ms)[0m  COMMIT
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 2)) AS subquery
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".user_id = 2)[0m
+Rendered addresses/_address.erb (7.6ms)
+Rendered users/show.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 201ms (Views: 69.9ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/registries" for 65.39.26.17 at 2010-10-15 18:47:53 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[35mRegistry Load (0.3ms)[0m  SELECT "registries".* FROM "registries"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:47:53.544250', "perishable_token" = 'JDJtLTYr0T5vGnzPowW', "updated_at" = '2010-10-15 18:47:53.544981' WHERE ("users"."id" = 2)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered registries/index.html.erb within layouts/application (167.7ms)
+Completed 200 OK in 181ms (Views: 168.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users" for 65.39.26.17 at 2010-10-15 18:47:56 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:47:56.162362', "perishable_token" = 'oSoKnIoR7ncqad6EOVg', "updated_at" = '2010-10-15 18:47:56.163007' WHERE ("users"."id" = 2)
+  [1m[36mSQL (45.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 194ms (Views: 8.4ms | ActiveRecord: 48.8ms)
+
+
+Started GET "/users/new" for 65.39.26.17 at 2010-10-15 18:48:04 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#new as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered addresses/_form.erb (10.5ms)
+Rendered users/_form.erb (15.4ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb___502421614_94219260_282446766 at /home/kbeswick/git-repos/wms/app/views/users/new.html.erb:3)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:48:04.737546', "perishable_token" = 'uTa2MoVjTU5OEM5CDt88', "updated_at" = '2010-10-15 18:48:04.738440' WHERE ("users"."id" = 2)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered users/new.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 258ms (Views: 107.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/events" for 65.39.26.17 at 2010-10-15 18:48:14 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:48:14.435178', "perishable_token" = 'vCk0wIyQuFJO9sY707wA', "updated_at" = '2010-10-15 18:48:14.435892' WHERE ("users"."id" = 2)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Rendered events/index.html.erb within layouts/application (203.3ms)
+Completed 200 OK in 216ms (Views: 204.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/events/new" for 65.39.26.17 at 2010-10-15 18:48:33 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by EventsController#new as HTML
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+Rendered events/_form.erb (8.4ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_events_new_html_erb__277978802_85033100_282446766 at /home/kbeswick/git-repos/wms/app/views/events/new.html.erb:3)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:48:33.420360', "perishable_token" = 'UwXY2otHXJQmTFjcS7c', "updated_at" = '2010-10-15 18:48:33.421065' WHERE ("users"."id" = 2)
+  [1m[36mSQL (1803.3ms)[0m  [1mCOMMIT[0m
+Rendered events/new.html.erb within layouts/application (1985.7ms)
+Completed 200 OK in 2004ms (Views: 184.1ms | ActiveRecord: 1806.3ms)
+
+
+Started GET "/users" for 142.51.8.234 at 2010-10-15 18:51:22 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:51:23.046664', "perishable_token" = '6W3GPCldVpeobLlHPv7w', "updated_at" = '2010-10-15 18:51:23.047269' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 123ms (Views: 8.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events" for 142.51.8.234 at 2010-10-15 18:51:36 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"events"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:51:36.822930', "perishable_token" = 'gDS4e9t5YYksVRMKUIxK', "updated_at" = '2010-10-15 18:51:36.823596' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Rendered events/index.html.erb within layouts/application (176.0ms)
+Completed 200 OK in 188ms (Views: 176.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/registries" for 142.51.8.234 at 2010-10-15 18:51:58 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[36mRegistry Load (0.3ms)[0m  [1mSELECT "registries".* FROM "registries"[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:51:58.511505', "perishable_token" = 'ESmK5VoEV2pc0jAGdEOw', "updated_at" = '2010-10-15 18:51:58.512158' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Rendered registries/index.html.erb within layouts/application (180.1ms)
+Completed 200 OK in 197ms (Views: 181.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/registries" for 142.51.8.234 at 2010-10-15 18:52:16 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by RegistriesController#index as HTML
+  [1m[35mRegistry Load (0.3ms)[0m  SELECT "registries".* FROM "registries"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"registries"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2010-10-15 18:52:16.346019', "perishable_token" = 'wXzboTBAIPWeIARyO4o', "updated_at" = '2010-10-15 18:52:16.346668' WHERE ("users"."id" = 1)[0m
+  [1m[35mSQL (48.7ms)[0m  COMMIT
+Rendered registries/index.html.erb within layouts/application (221.7ms)
+Completed 200 OK in 235ms (Views: 173.7ms | ActiveRecord: 52.2ms)
+
+
+Started GET "/users" for 142.51.8.234 at 2010-10-15 18:52:21 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:52:21.601065', "perishable_token" = 'rTYwKNggpCxYV4zZ3CJ3', "updated_at" = '2010-10-15 18:52:21.601676' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 162ms (Views: 8.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/2" for 142.51.8.234 at 2010-10-15 18:52:46 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:52:46.616292', "perishable_token" = '4JGqkj0DzINau2P6fBi9', "updated_at" = '2010-10-15 18:52:46.616908' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 1)) AS subquery[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".user_id = 1)
+Rendered addresses/_address.erb (7.9ms)
+Rendered users/show.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 187ms (Views: 70.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users/2" for 142.51.8.234 at 2010-10-15 18:53:09 +0000
+DEPRECATION WARNING: Setting filter_parameter_logging in ActionController is deprecated and has no longer effect, please set 'config.filter_parameters' in config/application.rb instead. (called from <class:ApplicationController> at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:3)
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from <class:User> at /home/kbeswick/git-repos/wms/app/models/user.rb:2)
+  [1m[35mSQL (0.9ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"users"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."persistence_token" = '44361f18c5b67c2d198e4cc82db31019f9515d30e082c5c8daf9eea10b8c6f8bb2efd8aa841d85bcea7ab329e999ad60bcb1bf889842da0c73e2e0da32593690') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/kbeswick/git-repos/wms/app/controllers/application_controller.rb:9)
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = '2010-10-15 18:53:09.302070', "perishable_token" = 'Rbr1Q5Sg6fL8eGzzZz', "updated_at" = '2010-10-15 18:53:09.302785' WHERE ("users"."id" = 1)
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"addresses"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "addresses" WHERE ("addresses".user_id = 1)) AS subquery[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".user_id = 1)
+Rendered addresses/_address.erb (9.3ms)
+Rendered users/show.html.erb within layouts/application (78.5ms)
+Completed 200 OK in 250ms (Views: 82.0ms | ActiveRecord: 4.9ms)
